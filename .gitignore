@@ -1,5 +1,7 @@
 venv
+.venv
 __pycache__
 .env
+myapp.egg-info
 alembic
 alembic.ini

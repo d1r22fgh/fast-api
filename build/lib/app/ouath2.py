@@ -31,18 +31,16 @@ def verify_access_token(token: str, credentials_exception):
 
         if id is None:
             raise credentials_exception
-
+        
         token_data = schemas.TokenData(id=id)
-
+    
     except JWTError:
         raise credentials_exception
 
     return token_data
 
 
-def get_current_user(
-    token: str = Depends(ouath2_scheme), db: Session = Depends(database.get_db)
-):
+def get_current_user(token: str = Depends(ouath2_scheme), db: Session = Depends(database.get_db)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail=f"Could not verify credentials",
