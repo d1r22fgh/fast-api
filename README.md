@@ -1,5 +1,3 @@
-# Project Name
-# ## 
 ## Description
 This project is about using fast-api to build a backend project about basic CRUD operation on posts  
 
